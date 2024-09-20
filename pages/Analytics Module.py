@@ -11,7 +11,6 @@ st.set_page_config(page_title="Real Estate App-Analytics Module")
 st.title("Analytics")
 
 new_df = pd.read_csv('Datasets/data_viz.csv')
-feature_text = pickle.load(open('datasets/feature_text.pkl','rb'))
 
 numeric_cols = new_df.select_dtypes(include=['number']).columns
 group_df = new_df.groupby('sector')[numeric_cols].mean()[['price', 'price_per_sqft', 'built_up_area', 'latitude', 'longitude']]
