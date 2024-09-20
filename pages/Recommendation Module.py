@@ -5,10 +5,10 @@ import numpy as np
 
 st.set_page_config(page_title="Recommend Appartments")
 
-location_df = pickle.load(open('datasets/location_distance.pkl','rb'))
-cosine_sim1 = pickle.load(open('datasets/cosine_sim1.pkl','rb'))
-cosine_sim2 = pickle.load(open('datasets/cosine_sim2.pkl','rb'))
-cosine_sim3 = pickle.load(open('datasets/cosine_sim3.pkl','rb'))
+location_df = pickle.load(open('Datasets/location_distance.pkl','rb'))
+cosine_sim1 = pickle.load(open('Datasets/cosine_sim1.pkl','rb'))
+cosine_sim2 = pickle.load(open('Datasets/cosine_sim2.pkl','rb'))
+cosine_sim3 = pickle.load(open('Datasets/cosine_sim3.pkl','rb'))
 
 def recommend_properties_with_scores(property_name, top_n=5):
     cosine_sim_matrix = 0.5 * cosine_sim1 + 0.8 * cosine_sim2 + 1 * cosine_sim3
